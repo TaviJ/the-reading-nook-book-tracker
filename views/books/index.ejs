@@ -1,0 +1,36 @@
+<!-- views/applications/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css">
+    <title>My Books</title>
+  </head>
+  <body>
+    <div class="page-layout">
+
+      <header>
+        <%- include('../partials/_navbar') %>
+      </header>
+
+      <main>
+        <h1>My Books</h1>
+        <% if (books.length === 0) { %>
+          <p>You have no books in your collection.
+        <a href="/books/new">Add a new book</a>.</p>
+    <% } else { %>
+      <ul>
+        <% books.forEach(function(book) { %>
+          <li>
+            <a href="/books/<%= book._id %>"><%= book.title %></a> by <%= book.author %>
+          </li>
+        <% }); %>
+      </ul>
+    <% } %>
+  </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -3,21 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Page</title>
+  <title>The Reading Nook</title>
 </head>
 <body>
+  <%- include('partials/_navbar') %>
+
+    
   <% if (user) { %>
-    <h1>Welcome to the app, <%= user.username %>!</h1>
+    <h1>Hi, <%= user.username %>!</h1>
     <p>
-      <a href="/auth/sign-out">Sign out</a>
+      Welcome back to The Reading Nook. Go to
+      <a href="/books">My Books</a> to manage your book collection.
     </p>
   <% } else { %>
-    <h1>Welcome to the app, guest.</h1>
+    <h1>Welcome to The Reading Nook!</h1>
+    <p>Please sign in to start tracking your books.</p>
     <p>
       <a href="/auth/sign-up">Sign up</a> or
       <a href="/auth/sign-in">Sign in</a>.
     </p>
   <% } %>
-  <p><a href="/vip-lounge">Get into the VIP Users Only lounge!</a></p>
+
+
 </body>
 </html>
