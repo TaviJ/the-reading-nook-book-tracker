@@ -64,6 +64,14 @@ async function update(req, res) {
   }
 }
 
+async function confirmDelete(req, res) {
+  const book = await Book.findById(req.params.id);
+  if (!book) return res.redirect('/books');
+  if (!book.user.equals(req.session.user._id)) return res.redirect('/books');
+
+  res.render('books/delete', { book });
+}
+
 async function destroy(req, res) {
   const book = await Book.findById(req.params.id);
   if (!book) return res.redirect('/books');
@@ -82,4 +90,5 @@ module.exports = {
   edit,
   update,
   destroy,
+  confirmDelete,
 };

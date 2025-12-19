@@ -23,6 +23,8 @@ mongoose.connection.on('connected', () => {
 
 // Middleware
 app.set('view engine', 'ejs');
+app.use(express.static('public'));
+
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 
@@ -51,6 +53,7 @@ app.post('/books', isSignedIn, bookController.create);
 app.get('/books/:id/edit', isSignedIn, bookController.edit);
 app.get('/books/:id', isSignedIn, bookController.show);
 app.put('/books/:id', isSignedIn, bookController.update);
+app.get('/books/:id/delete', isSignedIn, bookController.confirmDelete);
 app.delete('/books/:id', isSignedIn, bookController.destroy);
 
 // Server

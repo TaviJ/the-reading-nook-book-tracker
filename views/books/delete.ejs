@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Delete Book</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <div class="page-layout">
+
+    <header>
+      <%- include('../partials/_navbar') %>
+    </header>
+    <main>
+      <div class="container">
+        <h1>Delete "<%= book.title %>"</h1>
+        <p>Are you sure you want to delete this book? This action cannot be undone.</p>
+        <div class="actions">
+
+        <form action="/books/<%= book._id %>?_method=DELETE" method="POST" style="display:inline;">
+          <button class="delete-btn">Yes, Delete</button>
+          
+        </form>
+       <a href="/books/<%= book._id %>" class="cancel-btn">Cancel</a>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>

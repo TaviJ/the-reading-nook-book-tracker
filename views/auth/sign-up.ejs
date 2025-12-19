@@ -4,8 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign Up</title>
+   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+  <div class="page-layout">
+
+    <header>
+      <%- include('../partials/_navbar') %>
+    </header>
+
+    <main>
+      <div class="auth-card">
   <h1>Create a new account!</h1>
   <form action="/auth/sign-up" method="POST">
     <label for="username">Username:</label>
@@ -21,5 +30,7 @@
     />
     <button type="submit">Sign up</button>
   </form>
+</div>
+</main>
 </body>
 </html>

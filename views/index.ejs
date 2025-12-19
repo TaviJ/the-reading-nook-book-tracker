@@ -4,16 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Reading Nook</title>
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+  <div class="page-layout">
+    <header>
   <%- include('partials/_navbar') %>
+    </header>
 
-    
+    <main>
+  <div class="container ">
   <% if (user) { %>
     <h1>Hi, <%= user.username %>!</h1>
-    <p>
-      Welcome back to The Reading Nook. Go to
-      <a href="/books">My Books</a> to manage your book collection.
+    
+    <p class="welcome-message">
+      Welcome to The Reading Nook!
+      The Reading Nook is your very own cozy corner to track and manage your book collection. As your collection of books grows, The Reading Nook helps you keep track of your reading progress, genres, and ratings.
+       Go to
+      <a href="/books">My Bookshelf</a> to manage your book collection.
     </p>
   <% } else { %>
     <h1>Welcome to The Reading Nook!</h1>
@@ -26,4 +34,6 @@
 
 
 </body>
+    </main>
+  </div>  
 </html>

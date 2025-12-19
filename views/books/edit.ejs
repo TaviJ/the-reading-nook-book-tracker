@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Edit Book</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/style.css">
   </head>
   <body>
     <div class="page-layout">
@@ -12,7 +12,9 @@
       </header>
 
       <main>
+
         <div class="container">
+
     <h1>Edit Book</h1>
     <form action="/books/<%= book._id %>?_method=PUT" method="POST">
       <label for="title">Title:</label>
@@ -38,6 +40,9 @@
         <option value="Not Started">Not Started</option>
         <option value="In Progress">In Progress</option>
         <option value="Completed">Completed</option>
+
+      <label for="review">Notes:</label>
+      <textarea id="review" name="review" rows="4"><%= book.review %></textarea><br />
       
       </select><br /> 
       <input type="submit" value="Update Book" />
