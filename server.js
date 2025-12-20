@@ -11,7 +11,7 @@ const passUserToView = require('./middleware/pass-user-to-view');
 const isSignedIn = require('./middleware/is-signed-in');
 
 const authController = require('./controllers/auth');
-const bookController = require('./controllers/books');
+const bookController = require('../controllers/books');
 
 const port = process.env.PORT || 3000;
 
